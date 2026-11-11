@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desi AI Calculator - SIP, FD, RD, EMI Calculator Bharat</title>
+<meta name="description" content="Free Desi AI Calculator - SIP, FD, RD, EMI, Age Calculator in Hindi. Bharat ka best calculator.">
+<style>
+*{box-sizing:border-box}body{font-family:Arial,sans-serif;background:#f0f2f5;margin:0;padding:10px}.box{max-width:480px;margin:auto;background:#fff;padding:20px;border-radius:15px;box-shadow:0 4px 15px rgba(0,0,0,.1)}h1{text-align:center;color:#1a73e8;font-size:24px}h2{font-size:18px;margin-top:20px}.tabs{display:flex;gap:5px;flex-wrap:wrap}.tabs button{flex:1;padding:10px;border:0;border-radius:8px;background:#e8f0fe;cursor:pointer;font-weight:bold}.tabs button.active{background:#1a73e8;color:#fff}label{display:block;margin-top:12px;font-size:14px}input{width:100%;padding:12px;margin-top:5px;border:1px solid #ddd;border-radius:8px;font-size:16px}button.calc{width:100%;padding:14px;margin-top:15px;background:#1a73e8;color:#fff;border:0;border-radius:10px;font-size:17px;font-weight:bold}.result{background:#e8f5e9;padding:15px;border-radius:10px;margin-top:15px;text-align:center;font-size:18px;font-weight:bold}.small{text-align:center;color:#666;font-size:13px;margin-top:15px}
+</style>
+</head>
+<body>
+<div class="box">
+<h1>🇮🇳 Desi AI Calculator</h1>
+<p style="text-align:center">SIP • FD • RD • EMI • Age</p>
+<div class="tabs">
+<button onclick="show('sip',this)" class="active">SIP</button>
+<button onclick="show('fd',this)">FD</button>
+<button onclick="show('rd',this)">RD</button>
+<button onclick="show('emi',this)">EMI</button>
+</div>
+
+<div id="sip">
+<h2>SIP Calculator</h2>
+<label>Monthly Investment ₹<input type="number" id="sipAmt" value="5000"></label>
+<label>Return % (saal ka)<input type="number" id="sipRet" value="12"></label>
+<label>Saal<input type="number" id="sipYr" value="10"></label>
+<button class="calc" onclick="calcSIP()">Calculate</button>
+<div class="result" id="sipRes">Result yaha aayega</div>
+</div>
+
+<div id="fd" style="display:none">
+<h2>FD Calculator</h2>
+<label>Amount ₹<input type="number" id="fdAmt" value="100000"></label>
+<label>Interest %<input type="number" id="fdRet" value="7"></label>
+<label>Saal<input type="number" id="fdYr" value="5"></label>
+<button class="calc" onclick="calcFD()">Calculate</button>
+<div class="result" id="fdRes">Result yaha aayega</div>
+</div>
+
+<div id="rd" style="display:none">
+<h2>RD Calculator</h2>
+<label>Monthly ₹<input type="number" id="rdAmt" value="5000"></label>
+<label>Interest %<input type="number" id="rdRet" value="6.5"></label>
+<label>Saal<input type="number" id="rdYr" value="5"></label>
+<button class="calc" onclick="calcRD()">Calculate</button>
+<div class="result" id="rdRes">Result yaha aayega</div>
+</div>
+
+<div id="emi" style="display:none">
+<h2>EMI Calculator</h2>
+<label>Loan ₹<input type="number" id="emiAmt" value="500000"></label>
+<label>Interest %<input type="number" id="emiRet" value="10"></label>
+<label>Mahine<input type="number" id="emiMon" value="60"></label>
+<button class="calc" onclick="calcEMI()">Calculate</button>
+<div class="result" id="emiRes">Result yaha aayega</div>
+</div>
+
+<p class="small">Unique-GharSeva786 • Made in Bharat • 100% Free</p>
+</div>
+<script>
+function show(id,btn){['sip','fd','rd','emi'].forEach(x=>document.getElementById(x).style.display='none');document.getElementById(id).style.display='block';document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));btn.classList.add('active')}
+function fmt(n){return '₹'+Math.round(n).toLocaleString('en-IN')}
+function calcSIP(){let P=+document.getElementById('sipAmt').value,r=+document.getElementById('sipRet').value/1200,n=+document.getElementById('sipYr').value*12;let fv=P*((Math.pow(1+r,n)-1)/r)*(1+r);let inv=P*n;document.getElementById('sipRes').innerHTML='Maturity: '+fmt(fv)+'<br>Invested: '+fmt(inv)+'<br>Profit: '+fmt(fv-inv)}
+function calcFD(){let P=+document.getElementById('fdAmt').value,r=+document.getElementById('fdRet').value/100,y=+document.getElementById('fdYr').value;let m=P*Math.pow(1+r/4,4*y);document.getElementById('fdRes').innerHTML='Maturity: '+fmt(m)+'<br>Profit: '+fmt(m-P)}
+function calcRD(){let P=+document.getElementById('rdAmt').value,r=+document.getElementById('rdRet').value/400,n=+document.getElementById('rdYr').value*4;let m=P*((Math.pow(1+r,n)-1)/(1-Math.pow(1+r,-1/3)));document.getElementById('rdRes').innerHTML='Maturity: '+fmt(m)+'<br>Invested: '+fmt(P*n*3)}
+function calcEMI(){let P=+document.getElementById('emiAmt').value,r=+document.getElementById('emiRet').value/1200,n=+document.getElementById('emiMon').value;let emi=P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);document.getElementById('emiRes').innerHTML='EMI: '+fmt(emi)+'/month<br>Total: '+fmt(emi*n)}
+</script>
+</body>
+</html>
