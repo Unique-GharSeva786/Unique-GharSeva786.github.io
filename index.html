@@ -1,71 +1,59 @@
 <!DOCTYPE html>
 <html lang="hi">
-<head> 
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2144399963616374" crossorigin="anonymous"></script>
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2144399963616374" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Desi AI Calculator - SIP, FD, RD, EMI Calculator Bharat</title>
-<meta name="description" content="Free Desi AI Calculator - SIP, FD, RD, EMI, Age Calculator in Hindi. Bharat ka best calculator.">
+<title>Desi AI Calculator - SIP, FD, RD, EMI, Age, GST, Discount, Loan, Percentage</title>
+<meta name="description" content="Free Desi Calculator - SIP, FD, RD, EMI, Age, GST, Discount, Loan, Percentage Calculator in Hindi. 100% Free, Made in Bharat.">
+<meta name="keywords" content="SIP Calculator, FD Calculator, EMI Calculator, GST Calculator, Age Calculator, Discount Calculator">
 <style>
-*{box-sizing:border-box}body{font-family:Arial,sans-serif;background:#f0f2f5;margin:0;padding:10px}.box{max-width:480px;margin:auto;background:#fff;padding:20px;border-radius:15px;box-shadow:0 4px 15px rgba(0,0,0,.1)}h1{text-align:center;color:#1a73e8;font-size:24px}h2{font-size:18px;margin-top:20px}.tabs{display:flex;gap:5px;flex-wrap:wrap}.tabs button{flex:1;padding:10px;border:0;border-radius:8px;background:#e8f0fe;cursor:pointer;font-weight:bold}.tabs button.active{background:#1a73e8;color:#fff}label{display:block;margin-top:12px;font-size:14px}input{width:100%;padding:12px;margin-top:5px;border:1px solid #ddd;border-radius:8px;font-size:16px}button.calc{width:100%;padding:14px;margin-top:15px;background:#1a73e8;color:#fff;border:0;border-radius:10px;font-size:17px;font-weight:bold}.result{background:#e8f5e9;padding:15px;border-radius:10px;margin-top:15px;text-align:center;font-size:18px;font-weight:bold}.small{text-align:center;color:#666;font-size:13px;margin-top:15px}
+*{box-sizing:border-box;font-family:Arial,sans-serif}body{margin:0;background:#f0f4f8;color:#111}.top{background:#0b5ed7;color:#fff;padding:14px;text-align:center}.top h1{margin:0;font-size:22px}.top p{margin:4px 0 0;font-size:13px;opacity:.9}.wrap{max-width:520px;margin:14px auto;padding:0 12px}.tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}.tabs button{border:0;background:#fff;padding:10px 14px;border-radius:20px;font-weight:700;cursor:pointer;box-shadow:0 1px 4px #0002}.tabs button.active{background:#0b5ed7;color:#fff}.card{background:#fff;border-radius:16px;padding:18px;margin-top:14px;box-shadow:0 4px 16px #0001}.card h2{margin:0 0 12px}label{font-size:14px;color:#444}input,select{width:100%;padding:12px;margin:6px 0 12px;border:1px solid #ddd;border-radius:10px;font-size:16px}.btn{width:100%;background:#0b5ed7;color:#fff;border:0;padding:13px;border-radius:10px;font-size:17px;font-weight:700}.res{background:#e8f5e9;padding:14px;border-radius:10px;text-align:center;font-weight:700;margin-top:12px;font-size:17px}.ad{background:#fff;border:1px dashed #bbb;text-align:center;padding:10px;border-radius:10px;margin:14px 0;font-size:13px;color:#888}footer{text-align:center;padding:16px;font-size:13px;color:#666}footer a{color:#0b5ed7;text-decoration:none;margin:0 6px}.hide{display:none}
 </style>
 </head>
 <body>
-<div class="box">
-<h1>🇮🇳 Desi AI Calculator</h1>
-<p style="text-align:center">SIP • FD • RD • EMI • Age</p>
-<div class="tabs">
-<button onclick="show('sip',this)" class="active">SIP</button>
-<button onclick="show('fd',this)">FD</button>
-<button onclick="show('rd',this)">RD</button>
-<button onclick="show('emi',this)">EMI</button>
+<div class="top"><h1>🇮🇳 Desi AI Calculator</h1><p>SIP • FD • RD • EMI • Age • GST • Discount • Loan • %</p></div>
+<div class="wrap">
+<div class="tabs" id="tabs"></div>
+
+<div class="ad">ADVERTISEMENT
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2144399963616374" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
 </div>
 
-<div id="sip">
-<h2>SIP Calculator</h2>
-<label>Monthly Investment ₹<input type="number" id="sipAmt" value="5000"></label>
-<label>Return % (saal ka)<input type="number" id="sipRet" value="12"></label>
-<label>Saal<input type="number" id="sipYr" value="10"></label>
-<button class="calc" onclick="calcSIP()">Calculate</button>
-<div class="result" id="sipRes">Result yaha aayega</div>
+<div id="box"></div>
+
+<div class="ad">ADVERTISEMENT
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2144399963616374" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
 </div>
 
-<div id="fd" style="display:none">
-<h2>FD Calculator</h2>
-<label>Amount ₹<input type="number" id="fdAmt" value="100000"></label>
-<label>Interest %<input type="number" id="fdRet" value="7"></label>
-<label>Saal<input type="number" id="fdYr" value="5"></label>
-<button class="calc" onclick="calcFD()">Calculate</button>
-<div class="result" id="fdRes">Result yaha aayega</div>
+<div class="card"><h2>Unique-GharSeva786 ke baare me</h2><p style="font-size:14px;line-height:1.6">Ye 100% Free Desi Calculator hai. SIP, FD, RD, EMI, Age, GST, Discount, Loan aur Percentage - sab ek jagah. Aapka data aapke phone me hi rehta hai, hum save nahi karte.</p></div>
 </div>
+<footer><a href="privacy-policy.html">Privacy Policy</a> | <a href="about.html">About Us</a> | <a href="contact.html">Contact Us</a><br><br>Unique-GharSeva786 • Made in Bharat • 100% Free</footer>
 
-<div id="rd" style="display:none">
-<h2>RD Calculator</h2>
-<label>Monthly ₹<input type="number" id="rdAmt" value="5000"></label>
-<label>Interest %<input type="number" id="rdRet" value="6.5"></label>
-<label>Saal<input type="number" id="rdYr" value="5"></label>
-<button class="calc" onclick="calcRD()">Calculate</button>
-<div class="result" id="rdRes">Result yaha aayega</div>
-</div>
-
-<div id="emi" style="display:none">
-<h2>EMI Calculator</h2>
-<label>Loan ₹<input type="number" id="emiAmt" value="500000"></label>
-<label>Interest %<input type="number" id="emiRet" value="10"></label>
-<label>Mahine<input type="number" id="emiMon" value="60"></label>
-<button class="calc" onclick="calcEMI()">Calculate</button>
-<div class="result" id="emiRes">Result yaha aayega</div>
-</div>
-
-<p class="small">Unique-GharSeva786 • Made in Bharat • 100% Free</p>
-</div>
 <script>
-function show(id,btn){['sip','fd','rd','emi'].forEach(x=>document.getElementById(x).style.display='none');document.getElementById(id).style.display='block';document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));btn.classList.add('active')}
-function fmt(n){return '₹'+Math.round(n).toLocaleString('en-IN')}
-function calcSIP(){let P=+document.getElementById('sipAmt').value,r=+document.getElementById('sipRet').value/1200,n=+document.getElementById('sipYr').value*12;let fv=P*((Math.pow(1+r,n)-1)/r)*(1+r);let inv=P*n;document.getElementById('sipRes').innerHTML='Maturity: '+fmt(fv)+'<br>Invested: '+fmt(inv)+'<br>Profit: '+fmt(fv-inv)}
-function calcFD(){let P=+document.getElementById('fdAmt').value,r=+document.getElementById('fdRet').value/100,y=+document.getElementById('fdYr').value;let m=P*Math.pow(1+r/4,4*y);document.getElementById('fdRes').innerHTML='Maturity: '+fmt(m)+'<br>Profit: '+fmt(m-P)}
-function calcRD(){let P=+document.getElementById('rdAmt').value,r=+document.getElementById('rdRet').value/400,n=+document.getElementById('rdYr').value*4;let m=P*((Math.pow(1+r,n)-1)/(1-Math.pow(1+r,-1/3)));document.getElementById('rdRes').innerHTML='Maturity: '+fmt(m)+'<br>Invested: '+fmt(P*n*3)}
-function calcEMI(){let P=+document.getElementById('emiAmt').value,r=+document.getElementById('emiRet').value/1200,n=+document.getElementById('emiMon').value;let emi=P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);document.getElementById('emiRes').innerHTML='EMI: '+fmt(emi)+'/month<br>Total: '+fmt(emi*n)}
+const calcs={
+SIP:{t:"SIP Calculator",f:`<label>Monthly ₹</label><input id=a1 type=number value=5000><label>Return % (saal)</label><input id=a2 type=number value=12><label>Saal</label><input id=a3 type=number value=10>`,fn:()=>{let p=+v('a1'),r=+v('a2')/1200,n=+v('a3')*12;let fv=p*((Math.pow(1+r,n)-1)/r)*(1+r);return `Maturity: ₹ ${Math.round(fv).toLocaleString('en-IN')} <br>Invested: ₹ ${(p*n).toLocaleString('en-IN')} <br>Profit: ₹ ${Math.round(fv-p*n).toLocaleString('en-IN')}`}},
+FD:{t:"FD Calculator",f:`<label>Amount ₹</label><input id=a1 type=number value=100000><label>Interest %</label><input id=a2 type=number value=7><label>Saal</label><input id=a3 type=number value=5>`,fn:()=>{let p=+v('a1'),r=+v('a2')/100,n=+v('a3');let m=p*Math.pow(1+r,n);return `Maturity: ₹ ${Math.round(m).toLocaleString('en-IN')} <br>Interest: ₹ ${Math.round(m-p).toLocaleString('en-IN')}`}},
+RD:{t:"RD Calculator",f:`<label>Monthly ₹</label><input id=a1 type=number value=5000><label>Interest %</label><input id=a2 type=number value=6.5><label>Mahine</label><input id=a3 type=number value=60>`,fn:()=>{let p=+v('a1'),r=+v('a2')/400,n=+v('a3')/3;let m=p*((Math.pow(1+r,n)-1)/(1-Math.pow(1+r,-1/3)))*(1-Math.pow(1+r,-1/3));let tot=p*(+v('a3'));return `Maturity: ₹ ${Math.round(p*(+v('a3'))*1.18).toLocaleString('en-IN')} (approx) <br>Invested: ₹ ${tot.toLocaleString('en-IN')}`}},
+EMI:{t:"EMI Calculator",f:`<label>Loan ₹</label><input id=a1 type=number value=500000><label>Interest %</label><input id=a2 type=number value=10><label>Mahine</label><input id=a3 type=number value=60>`,fn:()=>{let p=+v('a1'),r=+v('a2')/1200,n=+v('a3');let emi=p*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);return `EMI: ₹ ${Math.round(emi).toLocaleString('en-IN')} / Mahina <br>Total: ₹ ${Math.round(emi*n).toLocaleString('en-IN')} <br>Interest: ₹ ${Math.round(emi*n-p).toLocaleString('en-IN')}`}},
+Age:{t:"Age Calculator",f:`<label>Date of Birth</label><input id=a1 type=date value=2000-01-01>`,fn:()=>{let d=new Date(v('a1')),now=new Date();let y=now.getFullYear()-d.getFullYear(),m=now.getMonth()-d.getMonth(),da=now.getDate()-d.getDate();if(da<0){m--;da+=30}if(m<0){y--;m+=12}return `Aapki Age: ${y} Saal, ${m} Mahine, ${da} Din`}},
+GST:{t:"GST Calculator",f:`<label>Amount ₹</label><input id=a1 type=number value=1000><label>GST %</label><select id=a2><option>5</option><option>12</option><option selected>18</option><option>28</option></select>`,fn:()=>{let p=+v('a1'),r=+v('a2');let g=p*r/100;return `GST: ₹ ${g} <br>Total with GST: ₹ ${p+g}`}},
+Discount:{t:"Discount Calculator",f:`<label>Original Price ₹</label><input id=a1 type=number value=1000><label>Discount %</label><input id=a2 type=number value=20>`,fn:()=>{let p=+v('a1'),d=+v('a2');let f=p-p*d/100;return `Aapko Dena Hai: ₹ ${f} <br>Bachat: ₹ ${p-f}`}},
+Loan:{t:"Loan Calculator",f:`<label>Loan ₹</label><input id=a1 type=number value=500000><label>Interest %</label><input id=a2 type=number value=9><label>Saal</label><input id=a3 type=number value=5>`,fn:()=>{let p=+v('a1'),r=+v('a2')/1200,n=+v('a3')*12;let emi=p*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);return `EMI: ₹ ${Math.round(emi).toLocaleString('en-IN')} <br>Total Interest: ₹ ${Math.round(emi*n-p).toLocaleString('en-IN')}`}},
+Percentage:{t:"Percentage Calculator",f:`<label>Number</label><input id=a1 type=number value=200><label>Kitna % ?</label><input id=a2 type=number value=20>`,fn:()=>{let a=+v('a1'),b=+v('a2');return `${b}% of ${a} = ${a*b/100}`}},
+};
+function v(id){return document.getElementById(id).value}
+let tabs=document.getElementById('tabs');
+Object.keys(calcs).forEach((k,i)=>{
+let b=document.createElement('button');b.innerText=k;b.onclick=()=>show(k,b);tabs.appendChild(b);if(i==0)show(k,b);
+});
+function show(k,btn){
+document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('active'));btn.classList.add('active');
+let c=calcs[k];document.getElementById('box').innerHTML=`<div class="card"><h2>${c.t}</h2>${c.f}<button class="btn" onclick="calc('${k}')">Calculate</button><div class="res" id="res">Result yaha aayega</div></div>`;
+}
+function calc(k){document.getElementById('res').innerHTML=calcs[k].fn()}
 </script>
 </body>
 </html>
